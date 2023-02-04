@@ -1,5 +1,6 @@
-import { component$, Slot } from '@builder.io/qwik';
-import Header from '../components/header/header';
+import { component$, Slot } from "@builder.io/qwik";
+import type { DocumentHead } from "@builder.io/qwik-city";
+import Header from "../components/header/header";
 
 export default component$(() => {
   return (
@@ -10,11 +11,17 @@ export default component$(() => {
           <Slot />
         </section>
       </main>
-      <footer>
-        <a href="https://www.builder.io/" target="_blank">
-          Made with ♡ by Builder.io
-        </a>
-      </footer>
+      <footer></footer>
     </>
   );
 });
+
+export const head: DocumentHead = {
+  title: "Demo/Test",
+  meta: [
+    {
+      name: "description",
+      content: "Just a demo/test",
+    },
+  ],
+};

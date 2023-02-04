@@ -15,7 +15,8 @@
 
 body {
   background-color: #fafafa;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
   padding: 20px 20px 40px 20px;
 }
 
@@ -40,51 +41,8 @@ h2 {
 section {
   padding: 20px;
   border-bottom: 10px solid var(--qwik-dark-blue);
-}
-
-ul {
-  list-style-type: square;
-  margin: 5px 0 30px 0;
-  padding-left: 25px;
-}
-
-li {
-  padding: 8px 0;
-}
-
-li::marker {
-  color: var(--qwik-light-blue);
-}
-
-a,
-a:visited {
-  color: var(--qwik-dark-blue);
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-table.commands {
-  margin: 0 0 30px 0;
-}
-
-.commands td {
-  padding: 5px;
-}
-
-.commands td:first-child {
-  white-space: nowrap;
-  padding-right: 20px;
-}
-
-code {
-  font-family: Menlo, Monaco, Courier New, monospace;
-  font-size: 0.9em;
-  background-color: rgb(224, 224, 224);
-  padding: 2px 4px;
-  border-radius: 3px;
-  border-bottom: 2px solid #bfbfbf;
+  min-height: 70vh;
+  display: flex;
 }
 
 footer {
@@ -93,33 +51,39 @@ footer {
   font-size: 0.8em;
 }
 
-footer a {
-  text-decoration: none;
+button {
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
 }
 
-footer a:hover {
-  text-decoration: underline;
+section > div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  flex: 1;
 }
 
-a.mindblow {
-  margin: 0 auto;
-  display: block;
-  background: var(--qwik-dark-purple);
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 0;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  width: fit-content;
-  border-bottom: 4px solid black;
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🤯</text></svg>")
-      16 0,
-    auto; /*!emojicursor.app*/
+section > div > form:first-of-type {
+  grid-column: 2;
 }
 
-a.mindblow:hover {
-  border-bottom-width: 0px;
-  margin-bottom: 4px;
-  transform: translateY(4px);
+section > div > span {
+  grid-column: 3;
+  font-size: 1.4rem;
+}
+
+section > div > form:not(:first-of-type) {
+  grid-column: 4;
+}
+
+section > div > p {
+  grid-row: 2;
+  grid-column: 2 / -2;
+  align-self: flex-start;
+  border: 1px solid #80808078;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-align: center;
 }
